@@ -31,7 +31,7 @@ module.exports = {
 ### Usage
 
 ```js
-const bovespa = require('bovespa-node)
+const bovespa = require('bovespa-node')
 const moment = require('moment')
 
 var yesterday = moment().add(-1, 'd').toDate();
