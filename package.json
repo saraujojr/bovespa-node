@@ -1,0 +1,24 @@
+{
+  "name": "bovespa-node",
+  "version": "1.0.0",
+  "description": "Download data from Bovespa Price Report using newest file formats",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Silvio Araujo",
+  "license": "MIT",
+  "dependencies": {
+    "dateformat": "^3.0.2",
+    "decompress": "^4.2.0",
+    "download": "^6.2.5",
+    "fstream": "^1.0.11",
+    "lodash": "^4.17.4",
+    "xml-js": "^1.5.1",
+    "xmldom": "^0.1.27",
+    "xpath": "0.0.24"
+  },
+  "devDependencies": {
+    "moment": "^2.18.1"
+  }
+}
