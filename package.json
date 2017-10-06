@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Silvio Araujo",
+  "author": {
+      "name": "Silvio Araujo",
+      "email": "saraujojr@gmail.com",
+      "url": "github.com/saraujojr"
+    },
+  "repository": "saraujojr/bovespa-node",
   "license": "MIT",
   "dependencies": {
     "dateformat": "^3.0.2",
