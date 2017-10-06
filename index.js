@@ -36,6 +36,7 @@ module.exports.getPriceReport = (date) => {
     try{
 
       var url = getConfig();
+      var tempFolder = require('./config/config.js').tempFolder;
 
       if (_.isDate(date)) {
 
@@ -45,12 +46,12 @@ module.exports.getPriceReport = (date) => {
           console.log('Downloading ' + url + '...');
 
           download(url).then((data) => {
-            fs.writeFileSync('temp/download.zip', data);
+            fs.writeFileSync(`${tempFolder}/download.zip`, data);
 
             console.log('Unzip files...');
 
-            decompress('temp/download.zip', 'temp').then((files) => {
-              return decompress('temp/' + fileToDownload, 'temp');
+            decompress(`${tempFolder}/download.zip`, `${tempFolder}`).then((files) => {
+              return decompress(`${tempFolder}/` + fileToDownload, `${tempFolder}`);
             }, (err) => {
               reject({
                 status: 'ERROR',
@@ -71,7 +72,7 @@ module.exports.getPriceReport = (date) => {
               resolve({
                   status: 'OK',
                   errorMessage: '',
-                  path: 'temp/' + fileToDownload,
+                  path: `${tempFolder}/` + fileToDownload,
                   reports: reportsArray
                 });
 
