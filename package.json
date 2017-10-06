@@ -1,16 +1,16 @@
 {
   "name": "bovespa-node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Download data from Bovespa Price Report using newest file formats",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": {
-      "name": "Silvio Araujo",
-      "email": "saraujojr@gmail.com",
-      "url": "github.com/saraujojr"
-    },
+    "name": "Silvio Araujo",
+    "email": "saraujojr@gmail.com",
+    "url": "github.com/saraujojr"
+  },
   "repository": "saraujojr/bovespa-node",
   "license": "MIT",
   "dependencies": {
