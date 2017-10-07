@@ -8,14 +8,16 @@ const fs = require('fs'),
      dom = require('xmldom').DOMParser,
      xmljs = require('xml-js');
 
-var getConfig = () => require('./config/config.js').url;
+var getConfig = () => require('./config/config.js');
 
 var getPriceReportNodes = (xmlDoc) => {
 
   var priceReports = new Array();
   var doc = new dom().parseFromString(xmlDoc)
 
-  var namespace = require('./config/config.js').priceReport.namespace;
+  var config = getConfig();
+  var namespace = config.priceReport.namespace;
+
   var nodes = xpath.select(`//*[local-name(.)='Document' and namespace-uri(.)='${namespace}']`, doc);
 
   for (var i=0; i < nodes.length; i++){
@@ -34,8 +36,10 @@ module.exports.getPriceReport = (date) => {
 
     try{
 
-      var url = getConfig();
-      var tempFolder = require('./config/config.js').tempFolder;
+      var config = getConfig();
+      var url = config.url;
+
+      var tempFolder = config.tempFolder;
 
       if (_.isDate(date)) {
 
