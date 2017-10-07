@@ -12,7 +12,6 @@ var getConfig = () => require('./config/config.js').url;
 
 var getPriceReportNodes = (xmlDoc) => {
 
-  //console.log('Testing...');
   var priceReports = new Array();
   var doc = new dom().parseFromString(xmlDoc)
 
@@ -65,7 +64,7 @@ module.exports.getPriceReport = (date) => {
 
                 var report = new Object();
                 report.fileName = files[i].path;
-                report.priceReports = getPriceReportNodes(files[0].data.toString('utf-8'));
+                report.priceReports = getPriceReportNodes(files[i].data.toString('utf-8'));
                 reportsArray.push(report);
               }
 
@@ -85,7 +84,6 @@ module.exports.getPriceReport = (date) => {
             });
 
           }, (err) => {
-            console.log(err);
             reject({
               status: 'ERROR',
               errorMessage: err.statusCode + ':' + err.statusMessage
